@@ -12,6 +12,6 @@ function convertPromiseToObservable<T>(promise: Promise<T>): Observable<T> {
 }
 
 const asyncMsg = new Promise(resolve => 
-        resolve('I used to be a Promise, but times changes, so now I\'\m a Observable ;)'));
+        resolve('I used to be a Promise, but times changes, so now I\'\m an Observable ;)'));
 
 convertPromiseToObservable(asyncMsg).subscribe(console.log);
