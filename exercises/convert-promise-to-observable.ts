@@ -11,6 +11,7 @@ function convertPromiseToObservable<T>(promise: Promise<T>): Observable<T> {
     })
 }
 
-const asyncMsg = new Promise(resolve => resolve('RxJS is awesome!'));
+const asyncMsg = new Promise(resolve => 
+        resolve('I use to be a Promise, but the times changes, so now I am a Observable'));
 
 convertPromiseToObservable(asyncMsg).subscribe(console.log);
