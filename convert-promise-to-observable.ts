@@ -5,7 +5,7 @@
 
 import { Observable } from "rxjs";
 
-function emitPromiseAsObservable<T>(promise: Promise<T>): Observable<T> {
+function convertPromiseToObservable<T>(promise: Promise<T>): Observable<T> {
     return new Observable(subscriber => {
         promise.then((result) => subscriber.next(result))
     })
@@ -13,4 +13,4 @@ function emitPromiseAsObservable<T>(promise: Promise<T>): Observable<T> {
 
 const asyncMsg = new Promise(resolve => resolve('RxJS is awesome!'));
 
-emitPromiseAsObservable(asyncMsg).subscribe(console.log);
+convertPromiseToObservable(asyncMsg).subscribe(console.log);
